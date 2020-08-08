@@ -9,7 +9,7 @@ pipeline {
     stage ('Build') {
       steps{
         echo "Building Project"
-        
+        sh label: '', script: '''ng build -prod'''
       }
     }
     stage ('Archive') {
