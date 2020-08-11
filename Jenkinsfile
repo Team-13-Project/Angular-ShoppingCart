@@ -41,7 +41,7 @@ pipeline {
       steps{
         echo "Deploying to Dev Environment"
         sh "docker rm -f petclinic || true"
-        sh "docker run -d --name=petclinic -p 8081:8080 subhashc27/petclinic"
+        sh "docker run -d --name=Angular-ShoppingCart -p 8081:8080 subhashc27/Angular-ShoppingCart"
       }
     }
   }
