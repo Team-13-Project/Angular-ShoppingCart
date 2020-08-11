@@ -10,4 +10,5 @@ COPY . .
 
 RUN npm run build --prod
 
-EXPOSE 80
+EXPOSE 8080
+
