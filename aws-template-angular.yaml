@@ -14,7 +14,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       SubnetId: !Select [0, !Ref ELBSubnet]
-      ImageId: ami-02354e95b39ca8dec
+      ImageId:  ami-09d8b5222f2b93bf0
       InstanceType: t2.micro
       KeyName: !Ref SSHKey
       SecurityGroupIds:
@@ -28,13 +28,13 @@ Resources:
           yum install docker
           service docker start
           usermod -a -G docker ec2-user
-          docker run -d --name=petclinic -p 8081:8080 subhashc27/petclinic
+          docker run -d --name=shoppingcart -p 8081:8080 subhashc27/shoppingcart
 
   MyInstance2:
     Type: AWS::EC2::Instance
     Properties:
       SubnetId: !Select [1, !Ref ELBSubnet]
-      ImageId: ami-02354e95b39ca8dec
+      ImageId:  ami-09d8b5222f2b93bf0
       InstanceType: t2.micro
       KeyName: !Ref SSHKey
       SecurityGroupIds:
@@ -48,7 +48,7 @@ Resources:
           yum install docker
           service docker start
           usermod -a -G docker ec2-user
-          docker run -d --name=petclinic -p 8081:8080 subhashc27/petclinic
+          docker run -d --name=shoppingcart -p 8081:8080 subhashc27/shoppingcart 
 
   ELBSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
