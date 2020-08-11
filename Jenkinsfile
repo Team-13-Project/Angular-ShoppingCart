@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "subhashc27/shoppingcart"
+    registry = "subhashc27/Angular-ShoppingCart"
     registryCredential = 'docker_hub_subhashc27'
     dockerImage = ''
   }
