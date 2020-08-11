@@ -10,7 +10,7 @@ pipeline {
       steps{
         echo "Building Project"
         sh "npm install"
-        sh "npm run ng --build  --prod"
+        sh 'npm run ng -- build --prod' 
       }
     }
     stage ('Archive') {
