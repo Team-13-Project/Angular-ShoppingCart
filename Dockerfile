@@ -1,14 +1,13 @@
-# base image
-FROM node:8.9.4
+FROM node:14-alpine as node
 
-# set working directory
-WORKDIR /Angular-ShoppingCart
+WORKDIR /usr/src/app
 
-# install and cache app dependencies
-COPY . ./Angular-ShoppingCart
+COPY package*.json ./
+
 RUN npm install
-RUN ng build --prod
 
-FROM nginx:1.13.3-alpine
-COPY dist/Angular-ShoppingCart
- /usr/share/nginx/html
+COPY . .
+
+RUN npm run build --prod
+
+EXPOSE 80
