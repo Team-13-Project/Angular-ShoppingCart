@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "subhashc27/petclinic"
+    registry = "subhashc27/shoppingcart"
     registryCredential = 'docker_hub_subhashc27'
     dockerImage = ''
   }
