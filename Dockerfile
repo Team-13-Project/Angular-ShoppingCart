@@ -2,12 +2,12 @@
 FROM node:8.9.4
 
 # set working directory
-WORKDIR /app
+WORKDIR /Angular-ShoppingCart
 
 # install and cache app dependencies
-COPY . .
+COPY . ./Angular-ShoppingCart
 RUN npm install
-RUN npm run build --prod
+RUN ng build --prod
 
 FROM nginx:1.13.3-alpine
 COPY dist/Angular-ShoppingCart
