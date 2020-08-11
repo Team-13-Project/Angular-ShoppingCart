@@ -10,3 +10,4 @@ RUN npm run build --prod
 
 EXPOSE 8080
 
+RUN bash -c 'touch /shoppingcart.json'
