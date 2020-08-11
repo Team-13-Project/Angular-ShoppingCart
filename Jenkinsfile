@@ -13,6 +13,12 @@ pipeline {
         sh "npm run ng --build  --prod"
       }
     }
+    stage ('Archive') {
+      steps{
+        echo "Archiving Project"
+        archiveArtifacts artifacts: '/dist', followSymlinks: false
+      }
+    }
     stage ('Build Docker Image') {
       steps{
         echo "Building Docker Image"
