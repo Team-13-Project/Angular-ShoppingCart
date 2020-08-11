@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "subhashc27/Angular-ShoppingCart"
+    registry = "subhashc27/shoppingcart"
     registryCredential = 'docker_hub_subhashc27'
     dockerImage = ''
   }
@@ -41,8 +41,8 @@ pipeline {
     stage ('Deploy to Dev') {
       steps{
         echo "Deploying to Dev Environment"
-        sh "docker rm -f Angular-ShoppingCart || true"
-        sh "docker run -d --name=Angular-ShoppingCart -p 8081:8080 subhashc27/Angular-ShoppingCart"
+        sh "docker rm -f shoppingcart || true"
+        sh "docker run -d --name=shoppingcart -p 8081:8080 subhashc27/shoppingcart"
       }
     }
   }
