@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY package*.json ./
 
+COPY . .
+
 RUN npm run build --prod
 
 EXPOSE 8080
